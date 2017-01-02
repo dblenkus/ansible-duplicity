@@ -1,6 +1,6 @@
 galaxy_info:
   author: Domen Blenkuš
-  description: Install Duplicity 0.7.x
+  description: Install Duplicity and Duply
   license: GPLv3
   min_ansible_version: 2.0
   platforms:
@@ -9,5 +9,6 @@ galaxy_info:
     - 7
   galaxy_tags:
     - duplicity
+    - duply
     - system
 dependencies: []

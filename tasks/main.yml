@@ -5,3 +5,5 @@
 
 - include: distribution.yml
   when: duplicity_url is not defined
+
+- include: duply.yml

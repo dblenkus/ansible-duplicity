@@ -1,0 +1,20 @@
+---
+
+- name: Download `Duply` tarball
+  get_url:
+    url: https://sourceforge.net/projects/ftplicity/files/duply%20%28simple%20duplicity%29/2.0.x/duply_2.0.1.tgz/download
+    dest: "{{ duplicity_dist_dir }}/duply_2.0.1.tgz"
+    checksum: sha256:9d2baf55ada5ab36a6da3fa909c8bdc4ce9a0116eac259ebba0efe9b93180bb0
+
+- name: Unarchive `Duply` tarball
+  unarchive:
+    remote_src: yes
+    src: "{{ duplicity_dist_dir }}/duply_2.0.1.tgz"
+    dest: "{{ duplicity_dist_dir }}"
+
+- name: Install `duply` script
+  copy:
+    remote_src: yes
+    src: "{{ duplicity_dist_dir }}/duply_2.0.1/duply"
+    dest: /usr/bin/duply
+    mode: 0755

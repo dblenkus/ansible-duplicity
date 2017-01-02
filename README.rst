@@ -1,10 +1,12 @@
 ansible-backup
 ==============
 
-Install `Duplicity`_ system package. If ``duplicity_url`` variable is specified,
-it is installed from given link.
+Install `Duplicity`_ package and `Duply`_ script. By default Duplicity is
+installed from system package. If ``duplicity_url`` variable is specified, it is
+installed from given link.
 
 .. _Duplicity: http://duplicity.nongnu.org
+.. _Duply: http://duply.net
 
 Requirements
 ------------
@@ -20,8 +22,8 @@ Role Variables
 | ``duplicity_url``                  |  string  | Url of custom Duplicity tarball to        |     no    |                                   |
 |                                    |          | install.                                  |           |                                   |
 +------------------------------------+----------+-------------------------------------------+-----------+-----------------------------------+
-| ``duplicity_dist_dir``             |  string  | Path to directory where custom Duplicity  |     no    |          /opt/duplicity           |
-|                                    |          | tarball is downloaded.                    |           |                                   |
+| ``duplicity_dist_dir``             |  string  | Path to directory where custom files are  |     no    |          /opt/duplicity           |
+|                                    |          | downloaded.                               |           |                                   |
 +------------------------------------+----------+-------------------------------------------+-----------+-----------------------------------+
 
 Dependencies
