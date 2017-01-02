@@ -1,0 +1,4 @@
+---
+
+- name: Install Duplicity package
+  package: name=duplicity state=present

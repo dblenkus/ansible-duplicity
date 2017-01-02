@@ -1,0 +1,7 @@
+---
+
+- include: custom.yml
+  when: duplicity_url is defined
+
+- include: distribution.yml
+  when: duplicity_url is not defined

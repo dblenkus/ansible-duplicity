@@ -1,0 +1,29 @@
+---
+
+- name: Install system dependencies
+  package: name={{ item }} state=present
+  with_items:
+    - python-pip
+    - gnupg2
+    - ncftp
+    - python-paramiko
+    - python-boto
+    - python-devel
+    - librsync-devel
+    - python-lockfile
+    - mailx
+    - gcc
+
+- name: Create download dir
+  file: path={{ duplicity_dist_dir }} state=directory
+
+- name: Download the Duplicity tarball
+  get_url:
+    url: "{{ duplicity_url }}"
+    dest: "{{ duplicity_dist_dir }}"
+  register: duplicity_download_res
+
+- name: Install Duplicity from tarball
+  pip: name=file://{{ duplicity_download_res.dest }}
+  when: duplicity_download_res.changed
+
