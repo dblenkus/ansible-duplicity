@@ -1,5 +1,10 @@
 ---
 
+- name: Create directory for source archive
+  file:
+    path: "{{ duplicity_dist_dir }}"
+    state: directory
+
 - name: Download `Duply` tarball
   get_url:
     url: https://sourceforge.net/projects/ftplicity/files/duply%20%28simple%20duplicity%29/2.0.x/duply_2.0.1.tgz/download
